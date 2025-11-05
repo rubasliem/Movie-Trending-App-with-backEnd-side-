@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -10,12 +9,13 @@ import { MoviesComponent } from './movies/movies.component';
 import { TvComponent } from './tv/tv.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { Home } from './home/home';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    HomeComponent,
+    Home,
     AboutComponent,
     FooterComponent,
     NavbarComponent,

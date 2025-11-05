@@ -57,6 +57,8 @@ togglePasswordVisibility() {
       complete: () => {
         this.isLoading = false;
       }
-    })
+    }).add(() => {
+      this.isLoading = false;
+    });
   }
 }

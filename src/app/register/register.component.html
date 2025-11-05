@@ -1,22 +1,24 @@
-<div class="w-75 mx-auto py-4">
+<div class="w-50 mx-auto py-4">
   @if(error){
     <div class="alert alert-danger">{{error}}</div>
   }
   <form
     (ngSubmit)="submitRegisterForm(registerForm)"
     [formGroup]="registerForm"
+    autocomplete="off"
   >
     <label for="first_name">first name</label>
     <input
       formControlName="first_name"
       type="text"
       class="form-control mb-2 input-mine"
-      name=""
+      name="" 
     />
     @if(registerForm.get('first_name')?.errors &&
     registerForm.get('first_name')?.touched) {
     <div class="alert alert-danger">
-      @switch (true) { @case
+      @switch (true) 
+      { @case
       (registerForm.get('first_name')?.hasError('required')) {
       <p class="m-0">First name is required</p>
       } @case (registerForm.get('first_name')?.hasError('minlength')) {
@@ -84,7 +86,7 @@
       formControlName="email"
       type="email"
       class="form-control mb-2 input-mine"
-      name=""
+      name="" autocomplete="off"
     />
 
      @if(registerForm.get('email')?.errors &&
@@ -107,7 +109,7 @@
     formControlName="password"
     [type]="showPassword ? 'text' : 'password'"
     class="form-control mb-2 input-mine pe-5"
-    id="password"
+    id="password" autocomplete="off"
   />
   <i
     class="fa"
