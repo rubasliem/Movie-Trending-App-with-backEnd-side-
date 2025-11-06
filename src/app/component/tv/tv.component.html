@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="row">
+  <div class="col-md-4 d-flex align-items-center">
+    <div>
+      <div class="brdr w-25 mb-3"></div>
+      <h2 class="h5">Trending TV 💙 <br>To Watch Right Now</h2>
+      <p class="py-1">Most Watched TV Movies by the Day</p>
+      <div class="brdr w-100 mb-3"></div>
+    </div>
+  </div>
+
+  <div class="col-md-2 mb-3" *ngFor="let item of trendingTv">
+    <app-media-item [item]="item"></app-media-item>
+  </div>
+</div>
+</div>

@@ -1,0 +1,28 @@
+<div class="card position-relative text-center ">
+  <img
+    *ngIf="item.profile_path || item.poster_path"
+    [src]="'https://image.tmdb.org/t/p/w500' + (item.profile_path || item.poster_path)"
+    class="card-img-top rounded-top"
+    alt="{{ item.name || item.title }}"
+    style="height: 250px; object-fit: cover;"
+  />
+
+  <img
+    *ngIf="!item.profile_path && !item.poster_path"
+    class="card-img-top rounded-top"
+    src="/assets/images/R.jpeg"
+    alt="{{ item.name || item.title }}"
+    style="height: 250px; object-fit: cover;"
+  />
+
+  <div class="card-body p-2">
+    <h3 class="h6 my-2">{{ item.title || item.name }}</h3>
+    <div
+      *ngIf="item.vote_average"
+      class="vote d-flex position-absolute top-0 end-0 p-1 rounded"
+    >
+      {{ item.vote_average.toFixed(1) || item.popularity.toFixed(1) }}
+    </div>
+    
+  </div>
+</div>

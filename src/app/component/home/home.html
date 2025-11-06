@@ -1,0 +1,45 @@
+
+<div class="overlay">
+  <h1 class="all mt-5">Welcome</h1>
+  <h2 class="all mt-3">
+    Millions of movies, TV shows and people to discover. Explore now.
+  </h2>
+
+  <div class="d-flex justify-content-center gap-0">
+    <input
+      type="text"
+      class="form-control mt-4 w-50 p-2 bg-light"
+      placeholder="Search for a movie, tv show, person......"
+      #searchInput
+    />
+    <button class="btn mt-4 text-light fw-bold" style="background-color: #052c65">
+      Search
+    </button>
+  </div>
+</div>
+
+
+<div class="container my-5">
+  <div class="row ">
+    <div class="col-md-2 mb-4 text-start " *ngFor="let movie of trendingMovies">
+      <div class="card h-100 rounded border-1 shadow-lg">
+        <img [src]="imgPath + movie.poster_path" class="card-img-top" alt="{{ movie.title }}" />
+        <div class="card-body bg-white rounded-bottom">
+          <h5 class="card-title">{{ movie.title }}</h5>
+
+          <div class="d-flex align-items-center gap-2">
+            <ng-container *ngFor="let star of getStars(movie.vote_average)">
+              <i class="bi bi-star-fill text-warning"></i>
+            </ng-container>
+            <i class="bi bi-star-half text-warning"></i>
+            <p class="card-text fs-5 text-success mb-0">{{ movie.vote_average }}</p>
+          </div>
+
+          <p class="card-text text-secondary fw-bolder">
+            {{ movie.release_date | date : 'MMM dd-yyy' }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
