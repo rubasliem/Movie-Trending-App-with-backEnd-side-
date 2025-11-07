@@ -14,7 +14,6 @@ export class MediaItemComponent {
 constructor( private _Router:Router ){}
 
   goToDetails() {
-    // لو الـ media_type مش موجود في العنصر، نحدد نوعه الافتراضي
     const mediaType = this.item.media_type || 'movie';
     this._Router.navigate(['/details', this.item.id, mediaType]);
 

@@ -4,18 +4,21 @@ import { Movie } from '../../Interfaces/movie';
 import { MediaItemComponent } from '../media-item/media-item.component';
 import { CommonModule } from '@angular/common';
 import { People } from '../../Interfaces/people';
+import { SearchPipePipe } from '../../search-pipe.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-people',
   standalone: true,
-  imports: [CommonModule, MediaItemComponent],
+  imports: [CommonModule, MediaItemComponent,FormsModule, SearchPipePipe],
   templateUrl: './people.component.html',
   styleUrl: './people.component.scss'
 })
 export class PeopleComponent implements  OnInit {
 
   trendingPeople: People[] = [];
-
+  term:any = ''
+  
   constructor(private _movieService: MovieService) {}
 
   ngOnInit(): void {

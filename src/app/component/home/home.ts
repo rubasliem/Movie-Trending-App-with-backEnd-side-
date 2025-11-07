@@ -3,22 +3,25 @@ import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieService } from '../../services/movies.service';
 import { Movie } from '../../Interfaces/movie';
+import { FormsModule } from '@angular/forms';
+import { SearchPipePipe } from '../../search-pipe.pipe';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule, SearchPipePipe],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
 })
 export class Home implements OnInit {
 
-    constructor(private _movieService: MovieService) {}
+    constructor(private _movieService: MovieService,private _Router:Router) {}
 
-  getTrendingMovies:any[] = [];
-  getTrendingTv:any[] = [];
-  getTrendingPeople:any[] = [];
+  trendingMovies: Movie[] = [];
+  imgPath: string = 'https://image.tmdb.org/t/p/w500/';
+  term:any = ''  
 
   ngOnInit(): void {
     this._movieService.getTrendingShow('movie').subscribe({
@@ -35,8 +38,11 @@ export class Home implements OnInit {
     });
   }
 
-  trendingMovies: Movie[] = [];
-  imgPath: string = 'https://image.tmdb.org/t/p/w500/';
+
+goDetails(movie: any) {
+  const mediaType = movie.media_type || 'movie'; // تأمين نوع الميديا في حال لم يكن موجودًا
+  this._Router.navigate(['/details', movie.id, mediaType]);
+}
 
   getStars(vote: number): number[] {
     const fullStars = Math.floor(vote / 2);

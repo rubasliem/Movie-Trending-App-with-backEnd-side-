@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 import { MovieService } from '../../services/movies.service';
 import { Movie } from '../../Interfaces/movie';
 import { MediaItemComponent } from '../media-item/media-item.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipePipe } from '../../search-pipe.pipe';
 
 @Component({
   selector: 'app-movies',
   standalone: true,
-  imports: [CommonModule, MediaItemComponent],
+  imports: [CommonModule, MediaItemComponent,FormsModule, SearchPipePipe],
   templateUrl: './movies.component.html',
   styleUrl: './movies.component.scss'
 })
 export class MoviesComponent implements OnInit {
 
   trendingMovies: Movie[] = [];
+  term:any = '' 
 
   constructor(private _movieService: MovieService) {}
 

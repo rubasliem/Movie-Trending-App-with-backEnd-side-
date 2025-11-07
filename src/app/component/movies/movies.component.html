@@ -5,11 +5,21 @@
       <div class="brdr w-25 mb-3"></div>
       <h2 class="h5">Trending Movies 💙<br>To Watch Right Now</h2>
       <p class="py-1">Most Watched Movies by the Day</p>
-      <div class="brdr w-100 mb-3"></div>
+      <div class="brdr w-100 "></div>
+
+    <div class="d-flex justify-content-center">
+    <input
+      type="text"
+      class="form-control mt-4 p-2 bg-light"
+      placeholder="Search for a movie ......"
+      [(ngModel)]="term"
+    />
+  </div>
     </div>
+
   </div>
 
-  <div class="col-md-2 mb-3" *ngFor="let item of trendingMovies">
+  <div class="col-md-2 mb-3" *ngFor="let item of trendingMovies | searchPipe:term">
     <app-media-item [item]="item"></app-media-item>
   </div>
 </div>
