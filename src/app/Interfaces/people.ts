@@ -3,6 +3,7 @@ export interface People {
     profile_path: string;
     known_for_department: string;
     popularity: number;
+    gender: number;
     
 
 }

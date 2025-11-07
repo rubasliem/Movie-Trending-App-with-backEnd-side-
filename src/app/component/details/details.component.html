@@ -1,0 +1,71 @@
+<div class="row align-items-center p-5 mx-auto">
+  <div class="col-md-3">
+    <img
+      *ngIf="item.profile_path || item.poster_path"
+      [src]="
+        'https://image.tmdb.org/t/p/w500' +
+        (item.profile_path || item.poster_path)
+      "
+      class="img-fluid w-100 h-75 rounded"
+      alt="{{ item.name || item.title }}"
+      style="height: 250px; object-fit: cover"
+    />
+
+    <img
+      *ngIf="!item.profile_path && !item.poster_path"
+      class="img-fluid w-100 h-75 rounded"
+      src="/assets/images/R.jpeg"
+      alt="{{ item.name || item.title }}"
+      style="height: 250px; object-fit: cover"
+    />
+  </div>
+
+  <div class="col-md-8 align-items-center">
+    <h3 class="my-2">{{ item.title || item.name }}</h3>
+    <p class="w-75">{{ item.overview }}</p>
+
+    <h6
+      *ngIf="item.release_date || item.first_air_date"
+      class="text-info fw-bold"
+    >
+      Release Date : {{ item.release_date || item.first_air_date | date }}
+    </h6>
+    <h6 *ngIf="item.vote_average" class="text-warning fw-bold">
+      {{ "Rating : " + item.vote_average }} <i class="bi bi-award"></i>
+    </h6>
+
+    @if(mediaType =="person"){
+        @if(item.gender===2){
+        <h6 >{{'Gender : Male '}}<i class="bi bi-gender-male"></i></h6>}       
+        @else{
+        <h6 >{{'Gender : Female '}}<i class="bi bi-gender-female"></i></h6>}
+
+      <div class="d-flex align-items-center gap-2">
+        popularity : 
+      <ng-container *ngFor="let star of getStars(item.popularity)">
+        <i class="bi bi-star-fill text-warning"></i>
+      </ng-container>
+      <i class="bi bi-star-half text-warning"></i>
+      <p class="card-text text-success"> {{ item.popularity }}</p>
+    </div> }
+  </div>
+</div>
+
+
+@if(mediaType !="person"){
+<h6 class="m-5">
+  For Similar Items you can see ...
+  <hr>
+</h6>
+
+<div class="row justify-content-center px-5 gy-4 mb-5">
+  <div *ngFor="let item of similar" class="col-md-2 col-sm-4 col-6" (click)="loadDetails(item.id, item.media_type || mediaType)">
+    <app-media-item [item]="item"></app-media-item>
+  </div>
+</div>
+}
+
+
+<div class="d-flex justify-content-center align-items-center mb-5">
+  <button class="btn btn-info px-4 py-2 fw-bold text-white" (click)="back()">Back</button>
+</div>
