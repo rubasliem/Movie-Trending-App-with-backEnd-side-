@@ -29,22 +29,39 @@
       
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-        <li class="nav-item d-flex align-items-center me-3">
-            <i class="fab mx-1 fa-facebook"></i>
-            <i class="fab mx-1 fa-twitter"></i>
-            <i class="fab mx-1 fa-spotify"></i>
-            <i class="fab mx-1 fa-google"></i>
-            <i class="fab mx-1 fa-youtube"></i>
-        </li>
+        <ul class="nav-item d-flex align-items-center me-3">
+           <a href="https://www.facebook.com/"><i class="fab mx-1 fa-facebook all_hover"></i></a>
+           <a href="https://www.twitter.com/"><i class="fab mx-1 fa-twitter all_hover"></i></a>
+           <a href="https://www.spotify.com/"><i class="fab mx-1 fa-spotify all_hover"></i></a>
+           <a href="https://www.google.com/"><i class="fab mx-1 fa-google all_hover"></i></a>
+           <a href="https://www.youtube.com/"><i class="fab mx-1 fa-youtube all_hover"></i></a>
+          </ul>
+
 
         @if(!isLogin) {
+
         <li class="nav-item">
-            <a class="nav-link text-white" routerLink="login" routerLinkActive="active">Login</a>
+            <a class="nav-link text-white" routerLink="login" routerLinkActive="active">Login <i class="bi bi-bag-heart"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" routerLink="register" routerLinkActive="active">Register</a>
+            <a class="nav-link text-white" routerLink="register" routerLinkActive="active">Register <i class="bi bi-r-circle-fill text-info"></i></a>
         </li>}
+
         @else {
+
+          <li class="nav-item dropdown ">
+          <a class="nav-link text-light" routerLink="settings" routerLinkActive="active" role="button" data-bs-toggle="dropdown"> 
+            Settings <i class="bi bi-gear"></i>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item all_hover"  routerLink="settings/password" routerLinkActive="active">Accessibility <i class="bi bi-universal-access"></i></a></li>
+            <li><a class="dropdown-item all_hover"  routerLink="settings/privace" routerLinkActive="active">Privacy <i class="bi bi-shield-exclamation"></i></a></li>
+            <li><a class="dropdown-item all_hover"  routerLink="settings/profile" routerLinkActive="active">Profile <i class="bi bi-person fs-5"></i></a></li>
+          </ul>
+        </li>
+
+   
+
         <li class="nav-item">
             <a (click)="logOutNow()" class="nav-link text-white" routerLink="register" routerLinkActive="active">Logout</a>
         </li>}

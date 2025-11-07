@@ -1,0 +1,38 @@
+<section class="settings-page">
+  <div class="container">
+    <h1 class="title">Settings</h1>
+
+    <form [formGroup]="settingsForm" (ngSubmit)="saveSettings()" class="settings-form">
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="darkMode">
+          Enable light Mode  <i class="bi bi-brightness-high"></i>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" formControlName="notifications">
+          Enable Notifications
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="language">Language</label>
+        <select id="language" formControlName="language">
+          <option value="en">English</option>
+          <option value="ar">Arabic</option>
+          <option value="es">Spanish</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-info all_hover px-4 py-2 fw-bold text-white ">Save Changes</button>
+    </form>
+
+    <div class="d-flex justify-content-center align-items-center mt-5">
+   <button class="all_hover btn btn-info px-4 py-2 fw-bold text-white " (click)="home()">Home <i class="bi bi-house-heart-fill"></i> </button>
+   </div>
+
+  </div>
+</section>
+

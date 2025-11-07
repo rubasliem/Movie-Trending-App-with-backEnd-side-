@@ -25,7 +25,7 @@ export class PeopleComponent implements  OnInit {
     this._movieService.getTrendingShow('person').subscribe({
       next: (data) => {
         console.log(data);
-        this.trendingPeople = data.results.slice(0, 16);
+        this.trendingPeople = data.results.slice(0, 20);
         console.log('Trending People:',this.trendingPeople);
       },
       error: (err) => {

@@ -1,19 +1,19 @@
 <div class="row align-items-center p-5 mx-auto">
-  <div class="col-md-3">
+  <div class="col-md-3 ">
     <img
       *ngIf="item.profile_path || item.poster_path"
       [src]="
         'https://image.tmdb.org/t/p/w500' +
         (item.profile_path || item.poster_path)
       "
-      class="img-fluid w-100 h-75 rounded"
+      class="img-fluid w-100 h-75 rounded card all_hover "
       alt="{{ item.name || item.title }}"
       style="height: 250px; object-fit: cover"
     />
 
     <img
       *ngIf="!item.profile_path && !item.poster_path"
-      class="img-fluid w-100 h-75 rounded"
+      class="img-fluid w-100 h-75 rounded card all_hover "
       src="/assets/images/R.jpeg"
       alt="{{ item.name || item.title }}"
       style="height: 250px; object-fit: cover"
@@ -39,6 +39,8 @@
         <h6 >{{'Gender : Male '}}<i class="bi bi-gender-male"></i></h6>}       
         @else{
         <h6 >{{'Gender : Female '}}<i class="bi bi-gender-female"></i></h6>}
+
+        <p>{{ item.biography }}</p>
 
       <div class="d-flex align-items-center gap-2">
         popularity : 
@@ -67,5 +69,5 @@
 
 
 <div class="d-flex justify-content-center align-items-center mb-5">
-  <button class="btn btn-info px-4 py-2 fw-bold text-white" (click)="back()">Back</button>
+  <button class="all_hover btn btn-info px-4 py-2 fw-bold text-white card_shadow" (click)="back()"><i class="bi bi-layer-backward"></i> Back</button>
 </div>

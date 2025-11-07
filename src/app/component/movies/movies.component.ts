@@ -5,6 +5,7 @@ import { Movie } from '../../Interfaces/movie';
 import { MediaItemComponent } from '../media-item/media-item.component';
 import { FormsModule } from '@angular/forms';
 import { SearchPipePipe } from '../../search-pipe.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -18,12 +19,12 @@ export class MoviesComponent implements OnInit {
   trendingMovies: Movie[] = [];
   term:any = '' 
 
-  constructor(private _movieService: MovieService) {}
-
+  constructor(private _movieService: MovieService ) {}
+  
   ngOnInit(): void {
     this._movieService.getTrendingShow('movie').subscribe({
       next: (data) => {
-        this.trendingMovies = data.results.slice(0, 20);
+        this.trendingMovies = data.results.slice(0, 30);
         console.log(this.trendingMovies);
       },
       error: (err) => {

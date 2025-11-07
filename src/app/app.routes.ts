@@ -18,10 +18,12 @@ export const routes: Routes = [
     {path:'movies',canActivate:[authGardGuard],component: MoviesComponent},
     {path:'tv',canActivate:[authGardGuard],component: TvComponent},
     {path:'people',canActivate:[authGardGuard],component: PeopleComponent},
-    {path:'details/:id/:media_type',canActivate:[authGardGuard],component: DetailsComponent},
+    {path:'details/:id/:media_type',canActivate:[authGardGuard] ,component:DetailsComponent},
 
     {path:'login',component: LoginComponent},
     {path:'register',component: RegisterComponent},
     
+    {path:'settings',canActivate:[authGardGuard] ,loadChildren:()=>import('./settings/settings.module').then((m)=>m.SettingsModule)},
+
     {path:'**',component: NotfoundComponent},
 ];

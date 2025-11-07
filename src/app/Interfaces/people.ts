@@ -4,6 +4,6 @@ export interface People {
     known_for_department: string;
     popularity: number;
     gender: number;
-    
+    biography:string; 
 
 }

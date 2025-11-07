@@ -11,6 +11,7 @@ import { RouterLink, Router } from "@angular/router";
 })
 export class MediaItemComponent {
 @Input() item:any=[];
+
 constructor( private _Router:Router ){}
 
   goToDetails() {
@@ -18,4 +19,5 @@ constructor( private _Router:Router ){}
     this._Router.navigate(['/details', this.item.id, mediaType]);
 
 }
+
 }

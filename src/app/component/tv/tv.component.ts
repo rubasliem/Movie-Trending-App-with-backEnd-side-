@@ -23,7 +23,7 @@ export class TvComponent implements  OnInit {
   ngOnInit(): void {
     this._movieService.getTrendingShow('tv').subscribe({
       next: (data) => {
-        this.trendingTv = data.results.slice(0, 30);
+        this.trendingTv = data.results.slice(0, 20);
         console.log(this.trendingTv);
       },
       error: (err) => {

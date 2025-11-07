@@ -1,0 +1,28 @@
+<section class="profile-page">
+  <div class="container">
+    <div class="profile-header">
+      <img class="avatar" [src]="user.avatar" alt="{{ user.name }} avatar">
+      <h1 class="name">{{ user.name }}</h1>
+      <p class="username">{{ user.username }}</p>
+      <p class="Age">{{ user.age }} years Old</p>
+      <p class="joined">{{ user.joined }}</p>
+    </div>
+
+    <div class="profile-details">
+      <div class="detail-item">
+        <h3>Email</h3>
+        <p>{{ user.email }}</p>
+      </div>
+      <div class="detail-item">
+        <h3>Bio</h3>
+        <p>{{ user.bio }}</p>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-5">
+   <button class="all_hover btn btn-info px-4 py-2 fw-bold text-white card_shadow" (click)="home()">Home <i class="bi bi-house-heart-fill"></i> </button>
+   </div>
+
+  </div>
+</section>
+
