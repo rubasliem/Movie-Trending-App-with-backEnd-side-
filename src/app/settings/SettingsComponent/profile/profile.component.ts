@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
+import { User } from '../../../Interfaces/user';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -10,17 +13,24 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent {
 
-  constructor(private _Router:Router){}
+  constructor(private _AuthService: AuthService , private _Router:Router){}
 
-   user = {
-    avatar: 'assets/images/Person-icon.jpg',
-    name: 'John Doe',
-    username: '@johndoe',
-    age : 30,
-    email: 'johndoe@example.com',
-    bio: 'Movie enthusiast and TV series lover. Always seeking the next big story.',
-    joined: 'Joined January 2024'
-  };
+  
+  user: User | null = null;
+ ngOnInit(): void {
+    // نحصل على البيانات المفكوكة من التوكن
+    this._AuthService.userData.subscribe({
+      next: (data: User | null) => {
+        if (data) {
+          this.user = data;
+
+        } else {
+          // لو مافيش بيانات يرجع المستخدم لتسجيل الدخول
+          this._Router.navigate(['/login']);
+        }
+      }
+    });
+  }
 
   home(){
     this._Router.navigate(['/'])

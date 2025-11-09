@@ -1,28 +1,30 @@
-<section class="profile-page">
-  <div class="container">
-    <div class="profile-header">
-      <img class="avatar" [src]="user.avatar" alt="{{ user.name }} avatar">
-      <h1 class="name">{{ user.name }}</h1>
-      <p class="username">{{ user.username }}</p>
-      <p class="Age">{{ user.age }} years Old</p>
-      <p class="joined">{{ user.joined }}</p>
+<section class="profile-page text-white">
+  <div class="container text-center mt-5">
+
+    <!-- الهيدر -->
+    <div class="profile-header mb-4">
+      <img class="avatar rounded-circle mb-3" src="assets/images/Person-icon.jpg" alt="avatar" width="120">
+      <h1 class="name">{{ user?.first_name }} {{ user?.last_name }}</h1>
+
+      <!-- اسم المستخدم -->
+
+      <p class="email text-info">{{user?.email }}</p>
+      <p class="text-info">{{ user?.age }} years old</p>
+
+      <br>
+      <h2 class="mb-3">Welcome back, {{ user?.first_name || 'Guest' }}! 🎬 ,</h2>
+      <h4 class="text-secondary mb-5">We are pleased to have you join our website <i class="bi bi-balloon-heart"></i></h4>
+
     </div>
 
-    <div class="profile-details">
-      <div class="detail-item">
-        <h3>Email</h3>
-        <p>{{ user.email }}</p>
-      </div>
-      <div class="detail-item">
-        <h3>Bio</h3>
-        <p>{{ user.bio }}</p>
-      </div>
-    </div>
 
-    <div class="d-flex justify-content-center align-items-center mt-5">
-   <button class="all_hover btn btn-info px-4 py-2 fw-bold text-white card_shadow" (click)="home()">Home <i class="bi bi-house-heart-fill"></i> </button>
-   </div>
+
+    <!-- زر العودة -->
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-info text-white fw-bold px-4 py-2" (click)="home()">
+        Home <i class="bi bi-house-heart-fill"></i>
+      </button>
+    </div>
 
   </div>
 </section>
-
