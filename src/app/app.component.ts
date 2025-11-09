@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { AboutComponent } from './component/about/about.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { Home } from './component/home/home';
 import { MoviesComponent } from './component/movies/movies.component';
 import { TvComponent } from './component/tv/tv.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
-import { Home } from './component/home/home';
+import { SearchPipePipe } from './search-pipe.pipe';
 
 @Component({
   selector: 'app-root',
@@ -25,9 +26,10 @@ import { Home } from './component/home/home';
     RegisterComponent,
     CommonModule,
     RouterOutlet,
-    HttpClientModule, 
+    HttpClientModule,
+    SearchPipePipe 
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {}

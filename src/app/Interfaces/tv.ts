@@ -5,5 +5,10 @@ export interface TV {
     vote_average: number;
     name: string;
     first_air_date: string;
+     genres: Genre[]; 
 
+}
+export interface Genre {
+  id: number;
+  name: string;
 }

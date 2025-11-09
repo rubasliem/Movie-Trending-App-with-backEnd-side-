@@ -10,14 +10,16 @@ import { MoviesComponent } from './component/movies/movies.component';
 import { Home } from './component/home/home';
 import { authGardGuard } from './Gard/auth-gard.guard';
 import { DetailsComponent } from './component/details/details.component';
+import { CategoriesComponent } from './component/categories/categories.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path:'home',canActivate:[authGardGuard], component: Home},
-    {path:'about',canActivate:[authGardGuard],component: AboutComponent},
+    {path:'about',component: AboutComponent},
     {path:'movies',canActivate:[authGardGuard],component: MoviesComponent},
     {path:'tv',canActivate:[authGardGuard],component: TvComponent},
     {path:'people',canActivate:[authGardGuard],component: PeopleComponent},
+    {path:'categories',canActivate:[authGardGuard],component: CategoriesComponent},
     {path:'details/:id/:media_type',canActivate:[authGardGuard] ,component:DetailsComponent},
 
     {path:'login',component: LoginComponent},

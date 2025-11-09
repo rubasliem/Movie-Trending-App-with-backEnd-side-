@@ -1,11 +1,12 @@
 
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MovieService } from '../../services/movies.service';
 import { Movie } from '../../Interfaces/movie';
-import { FormsModule } from '@angular/forms';
 import { SearchPipePipe } from '../../search-pipe.pipe';
+
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class Home implements OnInit {
   ngOnInit(): void {
     this._movieService.getTrendingShow('movie').subscribe({
       next: (data) => {
-        this.trendingMovies = data.results.slice(0,12);
+        this.trendingMovies = data.results.slice(0,20);
         console.log(this.trendingMovies);
       },
       error: (err) => {
@@ -48,4 +49,13 @@ goDetails(movie: any) {
     const fullStars = Math.floor(vote / 2);
     return Array(fullStars).fill(0);
   }
+
+  chunkMovies(array: any[], chunkSize: number): any[][] {
+  const chunks = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    chunks.push(array.slice(i, i + chunkSize));
+  }
+  return chunks;
+}
+
 }

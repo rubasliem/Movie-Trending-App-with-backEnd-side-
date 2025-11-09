@@ -1,0 +1,55 @@
+<div class="container mt-5 text-center text-white">
+  <h2 class="mb-4">Browse Categories</h2>
+
+  <!-- 🔹 الأزرار الرئيسية -->
+  <div class="btn-group mb-4">
+    <button
+      *ngFor="let cat of categories"
+      (click)="selectCategory(cat)"
+      class="btn btn-outline-info mx-2"
+      [class.active]="selectedCategory === cat">
+      {{ cat }}
+    </button>
+  </div>
+
+  <!-- 🔹 أقسام الأفلام -->
+  <div *ngIf="selectedCategory === 'Movies'">
+    <h4 class="text-start mb-3">Movie Categories <i class="bi bi-film"></i> </h4>
+    <div class="d-flex flex-wrap justify-content-start mb-4">
+      <button
+        *ngFor="let g of movieGenres"
+        (click)="selectSubCategory(g)"
+        class="btn btn-outline-light m-2 px-3 py-2">
+        🎬 {{ g.name }}
+      </button>
+    </div>
+  </div>
+
+  <!-- 🔹 أقسام المسلسلات -->
+  <div *ngIf="selectedCategory === 'TV'">
+    <h4 class="text-start mb-3">TV Categories <i class="bi bi-tv"></i></h4>
+    <div class="d-flex flex-wrap justify-content-start mb-4">
+      <button
+        *ngFor="let g of tvGenres"
+        (click)="selectSubCategory(g)"
+        class="btn btn-outline-light m-2 px-3 py-2">
+        📺 {{ g.name }}
+      </button>
+    </div>
+  </div>
+
+  <!-- 🔹 قسم عرض النتائج -->
+  <div class="row mt-5" *ngIf="filteredItems && filteredItems.length > 0">
+    <h4 class="text-start mb-4">
+      Results for: <span class="text-info">{{ selectedSubCategory?.name }}</span>
+    </h4>
+
+    <div class="col-md-3 mb-4" *ngFor="let item of filteredItems">
+      <app-media-item [item]="item"></app-media-item>
+    </div>
+  </div>
+
+  <!-- 🔹 في حال لا يوجد نتائج -->
+  <div *ngIf="selectedSubCategory && filteredItems.length === 0" class="text-muted mt-5">
+    No items found for this category.
+  </div>

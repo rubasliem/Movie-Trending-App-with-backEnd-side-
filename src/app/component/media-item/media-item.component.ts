@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input} from '@angular/core';
-import { RouterLink, Router } from "@angular/router";
+import {  Router, RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-media-item',
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './media-item.component.html',
-  styleUrl: './media-item.component.scss'
+  styleUrls: ['./media-item.component.scss']
 })
 export class MediaItemComponent {
 @Input() item:any=[];

@@ -5,5 +5,10 @@ export interface Movie {
   vote_average: number;
   overview: string;
   release_date: string;
-  video?: boolean;
+  genres: Genre[]; 
+}
+
+export interface Genre {
+  id: number;
+  name: string;
 }

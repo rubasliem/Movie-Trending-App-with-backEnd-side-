@@ -1,4 +1,4 @@
-<div class="card all_hover position-relative text-center" (click)="goToDetails()" style="cursor: pointer;">
+<div class="card all_hover position-relative text-center h-100" (click)="goToDetails()" style="cursor: pointer;">
 
   <img
     *ngIf="item.profile_path || item.poster_path"
@@ -17,7 +17,10 @@
   />
 
   <div class="card-body p-2">
+
     <h3 class="h6 my-2">{{ item.title || item.name }}</h3>
+
+    <h5>{{ item.genres }}</h5>
     <div
       *ngIf="item.vote_average"
       class="vote d-flex position-absolute top-0 end-0 p-1 rounded"

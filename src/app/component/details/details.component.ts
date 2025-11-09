@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../../services/movies.service';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MediaItemComponent } from "../media-item/media-item.component";
 import { Location } from '@angular/common';
+import { MediaItemComponent } from '../media-item/media-item.component';
 
 @Component({
   selector: 'app-details',
@@ -19,9 +19,9 @@ export class DetailsComponent implements OnInit {
   mediaType: string = '';
 
   constructor(
-    private _ActivatedRoute: ActivatedRoute,
+    private _ActivatedRoute:ActivatedRoute,
     private _MovieService: MovieService,
-    private _Location:Location ) {}
+    private _Location:Location) {}
 
   getStars(vote: number): number[] {
     const fullStars = Math.min(Math.floor(vote / 2), 5);

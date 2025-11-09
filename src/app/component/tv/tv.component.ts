@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../../services/movies.service';
 import { Movie } from '../../Interfaces/movie';
 import { CommonModule } from '@angular/common';
-import { MediaItemComponent } from '../media-item/media-item.component';
 import { TV } from '../../Interfaces/tv';
 import { FormsModule } from '@angular/forms';
 import { SearchPipePipe } from '../../search-pipe.pipe';
+import { MediaItemComponent } from '../media-item/media-item.component';
+
 @Component({
   selector: 'app-tv',
   standalone: true,
   imports: [CommonModule, MediaItemComponent ,FormsModule,SearchPipePipe],
   templateUrl: './tv.component.html',
-  styleUrl: './tv.component.scss'
+  styleUrls: ['./tv.component.scss']
 })
 export class TvComponent implements  OnInit {
 

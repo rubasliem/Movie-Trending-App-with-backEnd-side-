@@ -1,0 +1,15 @@
+
+.list-group-item {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.list-group-item:hover,
+.list-group-item.active {
+  background-color: var(--light-bg);
+  color: white;
+}
+
+input.form-control {
+  border-radius: 0.25rem;
+}

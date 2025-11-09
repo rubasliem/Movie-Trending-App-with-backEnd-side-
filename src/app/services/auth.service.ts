@@ -18,7 +18,7 @@ export class AuthService {
     userData:any = new BehaviorSubject(null);
 
     saveUserData() {
-   let encodedToken = localStorage.getItem('userToken'); // لا تستخدم JSON.stringify
+   let encodedToken = localStorage.getItem('userToken'); 
    if (encodedToken) {
     let decodedToken = jwtDecode(encodedToken);
     this.userData.next(decodedToken);

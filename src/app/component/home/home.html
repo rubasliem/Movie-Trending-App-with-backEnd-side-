@@ -16,27 +16,43 @@
 </div>
 
 
-<div class="container my-5">
-  <div class="row">
-    <div class="col-md-2 mb-4 text-start " *ngFor="let movie of trendingMovies | searchPipe :term">
-    <div class="card h-100 rounded border-1 all_hover" (click)="goDetails(movie)" style="cursor: pointer;">
-        <img [src]="imgPath + movie.poster_path" class="card-img-top" alt="{{ movie.title }}" />
-        <div class="card-body bg-white rounded-bottom">
-          <h5 class="card-title">{{ movie.title }}</h5>
+<div id="moviesCarousel" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-inner">
+  <div class=" my-5 carousel-item" *ngFor="let slide of chunkMovies(trendingMovies,5); let i = index" [class.active]="i === 0">
+    <div class="row justify-content-center">
+      <div class="col-md-2 mb-4" *ngFor="let movie of slide">
+        <div class="card h-100 rounded border-1 all_hover" (click)="goDetails(movie)" style="cursor: pointer;">
+          <img [src]="imgPath + movie.poster_path" class="card-img-top" alt="{{ movie.title }}" />
+          <div class="card-body bg-white rounded-bottom">
+            <h5 class="card-title">{{ movie.title }}</h5>
 
-          <div class="d-flex align-items-center gap-2">
-            <ng-container *ngFor="let star of getStars(movie.vote_average)">
-              <i class="bi bi-star-fill text-warning"></i>
-            </ng-container>
-            <i class="bi bi-star-half text-warning"></i>
-            <p class="card-text fs-5 text-success mb-0">{{ movie.vote_average }}</p>
+            <div class="d-flex align-items-center gap-2">
+              <ng-container *ngFor="let star of getStars(movie.vote_average)">
+                <i class="bi bi-star-fill text-warning"></i>
+              </ng-container>
+              <i class="bi bi-star-half text-warning"></i>
+              <p class="card-text fs-5 text-success mb-0">{{ movie.vote_average }}</p>
+            </div>
+
+            <p class="card-text text-secondary fw-bolder">
+              {{ movie.release_date | date : 'MMM dd-yyy' }}
+            </p>
           </div>
-
-          <p class="card-text text-secondary fw-bolder">
-            {{ movie.release_date | date : 'MMM dd-yyy' }}
-          </p>
         </div>
       </div>
     </div>
+</div>
+
+
   </div>
+
+
+  <button class=" carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#moviesCarousel" data-bs-slide="prev">
+    <span class=" carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class=" visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#moviesCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>

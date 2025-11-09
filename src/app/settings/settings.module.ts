@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SettingsRoutingModule } from './settings-routing.module';
-import { ProfileComponent } from './SettingsComponent/profile/profile.component';
+import { NgModule } from '@angular/core';
 import { SettingsComponent } from './SettingsComponent/settings/settings.component';
 import { PasswordComponent } from './SettingsComponent/password/password.component';
+import { SettingsRoutingModule } from './settings-routing.module';
 import { PrivaceComponent } from './SettingsComponent/privace/privace.component';
+import { ProfileComponent } from './SettingsComponent/profile/profile.component';
+
 
 @NgModule({
   declarations: [],
