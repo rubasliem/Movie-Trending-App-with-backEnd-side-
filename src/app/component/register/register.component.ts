@@ -31,10 +31,6 @@ togglePasswordVisibility() {
   })
 
 
-
-
-
-
   submitRegisterForm(registerForm:FormGroup) {
     this.isLoading = true;
     console.log(registerForm.value)
