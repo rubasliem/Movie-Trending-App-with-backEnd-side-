@@ -1,8 +1,7 @@
 .privacy-page {
   padding: 4rem 1rem;
-  background: linear-gradient(120deg, #0d1117 0%, #1e2733 100%);
-  color: var(--font-Color);
-  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-main);
+  color:var( --font-Color);
 
   .container {
     max-width: 800px;
@@ -14,9 +13,17 @@
     margin-bottom: 0.5rem;
   }
 
+    h2 {
+    font-size: 1.6rem;
+    color: var(--light-bg);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+
   .last-updated {
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
+    color:  var(--card-text);
     margin-bottom: 2rem;
   }
 
@@ -31,7 +38,7 @@
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: rgba(255,255,255,0.9);
+    color: var(--card-text);
   }
 
   .contact-info {

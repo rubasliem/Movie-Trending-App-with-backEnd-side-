@@ -11,22 +11,22 @@
         
         @if(isLogin) {
         <li class="nav-item">
-          <a class="nav-link text-white" routerLink="home" routerLinkActive="active">Home</a>
+          <a class="nav-link " routerLink="home" routerLinkActive="text-info">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" routerLink="about" routerLinkActive="active">About</a>
+          <a class="nav-link " routerLink="about" routerLinkActive="text-info">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" routerLink="movies" routerLinkActive="active">Movies</a>
+          <a class="nav-link " routerLink="movies" routerLinkActive="text-info">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" routerLink="tv" routerLinkActive="active">TV</a>
+          <a class="nav-link " routerLink="tv" routerLinkActive="text-info">TV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" routerLink="people" routerLinkActive="active">People</a>
+          <a class="nav-link " routerLink="people" routerLinkActive="text-info">People</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link text-white" routerLink="categories" routerLinkActive="active">Categories <i class="bi bi-film"></i> </a>
+          <a class="nav-link " routerLink="categories" routerLinkActive="text-info">Categories <i class="bi bi-film"></i> </a>
         </li>
       }
       </ul>
@@ -45,29 +45,29 @@
         @if(!isLogin) {
 
         <li class="nav-item">
-            <a class="nav-link text-white" routerLink="login" routerLinkActive="active">Login <i class="bi bi-bag-heart"></i></a>
+            <a class="nav-link " routerLink="login" routerLinkActive="text-info">Login <i class="bi bi-bag-heart"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" routerLink="register" routerLinkActive="active">Register <i class="bi bi-r-circle-fill text-info"></i></a>
+            <a class="nav-link" routerLink="register" routerLinkActive="text-info">Register <i class="bi bi-r-circle-fill text-info"></i></a>
         </li>}
 
         @else {
 
           <li class="nav-item dropdown ">
-          <a class="nav-link text-light" routerLink="settings" routerLinkActive="active" role="button" data-bs-toggle="dropdown"> 
+          <a class="nav-link " routerLink="settings" routerLinkActive="text-info" role="button" data-bs-toggle="dropdown"> 
             Settings <i class="bi bi-gear"></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item all_hover"  routerLink="settings/password" routerLinkActive="active">Accessibility <i class="bi bi-universal-access"></i></a></li>
-            <li><a class="dropdown-item all_hover"  routerLink="settings/privace" routerLinkActive="active">Privacy <i class="bi bi-shield-exclamation"></i></a></li>
-            <li><a class="dropdown-item all_hover"  routerLink="settings/profile" routerLinkActive="active">Profile <i class="bi bi-person fs-5"></i></a></li>
+            <li><a class="dropdown-item all_hover"  routerLink="settings/password" routerLinkActive="text-info">Accessibility <i class="bi bi-universal-access"></i></a></li>
+            <li><a class="dropdown-item all_hover"  routerLink="settings/privace" routerLinkActive="text-info">Privacy <i class="bi bi-shield-exclamation"></i></a></li>
+            <li><a class="dropdown-item all_hover"  routerLink="settings/profile" routerLinkActive="text-info">Profile <i class="bi bi-person fs-5"></i></a></li>
           </ul>
         </li>
 
    
 
         <li class="nav-item">
-            <a (click)="logOutNow()" class="nav-link text-white" routerLink="register" routerLinkActive="active">Logout</a>
+            <a (click)="logOutNow()" class="nav-link " routerLink="register" routerLinkActive="text-info">Logout</a>
         </li>}
       </ul>
     </div>

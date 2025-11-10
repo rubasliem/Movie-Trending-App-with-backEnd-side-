@@ -28,8 +28,8 @@ html, body {
     transition: all 0.3s;
 &:hover{
 transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(36, 184, 239, 0.25);
-      border-color: rgba(36, 184, 239, 0.4);
+      box-shadow: 0 8px 25px var(  --all-hover);
+      border-color:var( --border-color-hover)
 }
 }
 
@@ -73,3 +73,58 @@ a, a:hover {
     border: solid 1px var(--border-Color);
 }
 
+/* 🌙 Dark Theme */
+.dark-theme {
+  --bg-main: #000;
+  --bg-gradient-start: #0a0f1c;
+  --bg-gradient-mid: #132235;
+  --bg-gradient-end: #08121e;
+  --light-bg: #24baef;
+  --font-Color: #fff;
+  --second-FontColor: #949cb0c2;
+  --border-Color: #a8a8a83d;
+  --all-hover: #6e6e6e;
+  --card-about-hover:'$info'
+  --card-text : rgba(255,255,255,0.85);
+  --border-color-hover : rgba(36, 184, 239, 0.4);
+  --navbar-a-hover : #319edd ;
+  --shadow-btn-home : #6e6e6e;
+}
+
+/* ☀️ Light Theme */
+.light-theme {
+  --bg-main: #f8f9fa;
+  --light-bg:   #24baef;
+  --font-Color:  #30373c;
+  --second-FontColor: #a8a7a7;
+  --border-Color: #5479aa;
+  --card-about:  #c1d6e6;
+  --card-about-hover: #84b8e0;
+  --card-text : rgba(255,255,255,0.85);
+  --border-color-hover : rgba(36, 184, 239, 0.35);
+  --navbar-a-hover : #4f5d69;
+  --all-hover:  rgba(20, 40, 47, 0.4);
+  --shadow-btn-home :rgba(20, 40, 47, 0.4);
+  --font-Color-list: #30373c;
+}
+
+/* ⚡ Normal Theme (الافتراضي) */
+.normal-theme {
+  --bg-main: #0a0f1c;
+  --bg-gradient-start: #0a0f1c;
+  --bg-gradient-mid: #132235;
+  --bg-gradient-end: #586e88;
+  --light-bg: #020f14;
+  --font-Color: #fff;
+  --second-FontColor: #949cb0c2;
+  --border-Color: #9574743d;
+  --p-about:#a8a8a83d;
+  --card-about:  #dbe1e5;
+  --card-about-hover: #5ba3b8;
+  --card-text : rgba(255,255,255,0.85);
+  --border-color-hover : rgba(124, 153, 163, 0.4);
+  --left-Color:'$info';
+  --navbar-a-hover : #7ec3eb ;
+  --all-hover:rgba(36, 184, 239, 0.25);
+  --shadow-btn-home :rgba(36, 184, 239, 0.35);
+}

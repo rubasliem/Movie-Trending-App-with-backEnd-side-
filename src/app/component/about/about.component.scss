@@ -1,8 +1,7 @@
 .about-page {
   padding: 3rem 1rem;
-  background: linear-gradient(120deg, #0d1117 0%, #1e2733 100%);
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-main);
+  color:var( --font-Color);
 
   .container {
     max-width: 1000px;
@@ -26,46 +25,47 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top:60px;
     gap: 2rem;
 
     .card {
-      background: #1c2730;
+      background:var(--card-about);
       padding: 2rem;
       border-radius: 8px;
       width: 280px;
-      transition: transform 0.3s ease, background 0.3s ease;
+      transition: transform 0.3s ease, 0.3s ease;
 
       &:hover {
-        background: #5ba3b8;
+        background:var( --light-bg);
         transform: translateY(-6px);
         .card-icon {
-          color: #0d1117;
+          color:var(  --left-Color);
         }
         .card-title {
-          color: #0d1117;
+          color:var(  --left-Color);
         }
         .card-text {
-          color: #0d1117;
+          color:var(  --left-Color);
         }
       }
 
       .card-icon {
         font-size: 3rem;
         margin-bottom: 1rem;
-        color: #24baef;
+        color: var( --light-bg);
         transition: color 0.3s ease;
       }
 
       .card-title {
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
-        color: #fff;
+        color:var( --font-Color);
         transition: color 0.3s ease;
       }
 
       .card-text {
         font-size: 1rem;
-        color: rgba(255,255,255,0.85);
+        color: var( --card-text);
         transition: color 0.3s ease;
         line-height: 1.4;
       }
@@ -84,3 +84,4 @@
     }
   }
 }
+

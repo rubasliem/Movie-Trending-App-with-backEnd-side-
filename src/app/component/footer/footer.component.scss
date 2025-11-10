@@ -1,11 +1,14 @@
 .footer {
   border-top: 1px solid var(--border-Color);
   color: var(--font-Color);
-  font-family: 'Montserrat', sans-serif;
   position: relative;
   overflow: hidden;
-}
 
+.tect-color{
+  color: var(--font-Color);
+
+}
+}
 /* Glow line */
 .footer::before {
   content: "";
@@ -32,5 +35,7 @@ a{
     box-shadow: 0 8px 25px rgba(36, 184, 239, 0.25);
     color:var(--light-bg);
 }
+
+
 
 }

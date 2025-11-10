@@ -19,7 +19,7 @@
       <button
         *ngFor="let g of movieGenres"
         (click)="selectSubCategory(g)"
-        class="btn_list btn btn-outline-light m-2 px-3 py-2 all_hover">
+        class="text-secondary btn btn-outline-info m-2 px-3 py-2 all_hover">
         🎬 {{ g.name }}
       </button>
     </div>
@@ -32,7 +32,7 @@
       <button
         *ngFor="let g of tvGenres"
         (click)="selectSubCategory(g)"
-        class="btn_list btn btn-outline-light m-2 px-3 py-2 all_hover">
+        class="text-secondary btn btn-outline-info m-2 px-3 py-2 all_hover">
         📺 {{ g.name }}
       </button>
     </div>
@@ -50,6 +50,6 @@
   </div>
 
   <!-- 🔹 في حال لا يوجد نتائج -->
-  <div *ngIf="selectedSubCategory && filteredItems.length === 0" class="text-muted mt-5">
+  <div *ngIf="selectedSubCategory && filteredItems.length === 0" class="text-secondary mt-5 ">
     No items found for this category <i class="bi bi-emoji-neutral"></i>
   </div>

@@ -4,10 +4,17 @@
   transition: 0.3s;
 }
 
-.btn_list:hover,
-.btn_list.active,
-.btn_list:active {
-  background-color: #0dcaf0;
+h2,h4{
+    color:var( --font-Color)
+}
+
+.btn_list{
+
+&:hover,
+&.active,
+&:active {
+  background-color:'$info'
+}
 }
 
 input.form-control {

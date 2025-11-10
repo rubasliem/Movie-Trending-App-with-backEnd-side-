@@ -1,7 +1,13 @@
-.active{
-    color: #7ec3eb !important;
-}
+.container{
+background-color:var( --bg-main) ;
 
-a:hover{
-    color: #7ec3eb ;
+.nav-item{
+.nav-link{
+    color: var( --font-Color);
+
+    &:hover{
+    color: var( --navbar-a-hover)
+}
+}
+}
 }

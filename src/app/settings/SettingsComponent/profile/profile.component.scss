@@ -1,8 +1,7 @@
 .profile-page {
   padding: 4rem 1rem;
-  background: linear-gradient(120deg, #0d1117 0%, #1e2733 100%);
-  color: --font-Color;
-  font-family: 'Montserrat', sans-serif;
+  background: var(--bg-main);
+  color:var( --font-Color);
 
   .container {
     max-width: 700px;
@@ -20,42 +19,22 @@
       border: 3px solid var(--light-bg);
     }
 
-    .name {
-      font-size: 2rem;
-      margin: 0.5rem 0;
-    }
-
-    .username {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.7);
-      margin :0.25rem 0 1rem;
-    }
-
-    .joined {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-    }
   }
 
-  .profile-details {
+  .profile-header {
     margin-top: 2.5rem;
-    text-align: left;
 
-    .detail-item {
-      margin-bottom: 2rem;
-
-      h3 {
-        font-size: 1.2rem;
-        color: var(--light-bg);
-        margin: 0 0 0.5rem;
-      }
+    h1,h2{
+    color: var(--light-bg);
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    }
 
       p {
         font-size: 1rem;
-        color: rgba(255,255,255,0.9);
+        color: var(--card-text);
         line-height: 1.5;
       }
-    }
   }
 
   @media (max-width: 768px) {
