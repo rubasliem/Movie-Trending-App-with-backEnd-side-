@@ -19,7 +19,7 @@
 
   </div>
 
-  <div class="col-md-2 mb-3" *ngFor="let item of trendingMovies | searchPipe:term">
+  <div class="col-md-2 mb-3 h-100" *ngFor="let item of trendingMovies | searchPipe:term">
     <app-media-item [item]="item"></app-media-item>
   </div>
 </div>
