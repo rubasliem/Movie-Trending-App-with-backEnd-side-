@@ -4,10 +4,10 @@
   transition: 0.3s;
 }
 
-.list-group-item:hover,
-.list-group-item.active {
-  background-color: var(--light-bg);
-  color: white;
+.btn_list:hover,
+.btn_list.active,
+.btn_list:active {
+  background-color: #0dcaf0;
 }
 
 input.form-control {
