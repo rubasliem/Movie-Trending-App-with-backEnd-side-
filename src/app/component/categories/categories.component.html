@@ -1,4 +1,4 @@
-<div class="container mt-5 text-center text-white">
+<div class="container mt-5 text-center">
   <h2 class="mb-4">Browse Categories</h2>
 
   <!-- 🔹 الأزرار الرئيسية -->
@@ -6,7 +6,7 @@
     <button
       *ngFor="let cat of categories"
       (click)="selectCategory(cat)"
-      class="btn btn-outline-info mx-2"
+      class="btn-outline-info btn btn-outline-info mx-2"
       [class.active]="selectedCategory === cat">
       {{ cat }}
     </button>
@@ -19,7 +19,7 @@
       <button
         *ngFor="let g of movieGenres"
         (click)="selectSubCategory(g)"
-        class="text-secondary btn btn-outline-info m-2 px-3 py-2 all_hover">
+        class="btn m-2 px-3 py-2">
         🎬 {{ g.name }}
       </button>
     </div>
@@ -32,7 +32,7 @@
       <button
         *ngFor="let g of tvGenres"
         (click)="selectSubCategory(g)"
-        class="text-secondary btn btn-outline-info m-2 px-3 py-2 all_hover">
+        class="btn m-2 px-3 py-2">
         📺 {{ g.name }}
       </button>
     </div>

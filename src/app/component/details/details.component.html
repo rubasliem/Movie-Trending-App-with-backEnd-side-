@@ -6,14 +6,14 @@
         'https://image.tmdb.org/t/p/w500' +
         (item.profile_path || item.poster_path)
       "
-      class="img-fluid w-100 h-75 rounded card all_hover "
+      class="img-fluid w-100 h-75 rounded-4 card "
       alt="{{ item.name || item.title }}"
       style="height: 250px; object-fit: cover"
     />
 
     <img
       *ngIf="!item.profile_path && !item.poster_path"
-      class="img-fluid w-100 h-75 rounded card all_hover "
+      class="img-fluid w-100 h-75 rounded-4 card  "
       src="/assets/images/R.jpeg"
       alt="{{ item.name || item.title }}"
       style="height: 250px; object-fit: cover"
@@ -69,5 +69,5 @@
 
 
 <div class="d-flex justify-content-center align-items-center mb-5">
-  <button class="all_hover btn btn-info px-4 py-2 fw-bold text-white card_shadow" (click)="back()"><i class="bi bi-layer-backward"></i> Back</button>
+  <button class="btn text-info px-4 py-2 fw-bold" (click)="back()"><i class="bi bi-layer-backward"></i> Back</button>
 </div>

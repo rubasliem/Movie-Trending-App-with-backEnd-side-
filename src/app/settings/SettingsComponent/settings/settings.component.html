@@ -3,11 +3,11 @@
     <h1 class="title mb-3">Settings <i class="bi bi-gear"></i></h1>
 
 
-    <form [formGroup]="settingsForm" (ngSubmit)="saveSettings()" class="settings-form">
+    <form class="settings-form">
       
       <div class="form-group mb-3">
         <label for="theme">Theme <i class="bi bi-cloud-moon"></i></label>
-        <select class="m-2 rounded p-1" id="theme" formControlName="theme" (change)="changeTheme($event)">
+        <select class="m-2 rounded p-1" id="theme" formControlName="theme">
           <option value="normal">Normal <i class="bi bi-lightning"></i> </option>
           <option value="dark">Dark <i class="bi bi-moon"></i> </option>
           <option value="light">Light <i class="bi bi-brightness-high"></i> </option>
@@ -31,11 +31,11 @@
         </select>
       </div>
 
-      <button type="submit" class="btn btn-info all_hover px-4 py-2 fw-bold text-white my-4">Save Changes</button>
+      <button type="submit" class="btn text-info px-4 py-2 fw-bold my-4">Save Changes</button>
     </form>
 
     <div class="d-flex justify-content-center align-items-center mt-5">
-   <button class="all_hover btn btn-info px-4 py-2 fw-bold text-white " (click)="home()">Home <i class="bi bi-house-heart-fill"></i> </button>
+   <button class="btn text-info px-4 py-2 fw-bold" (click)="home()">Home <i class="bi bi-house-heart-fill"></i> </button>
    </div>
 
   </div>

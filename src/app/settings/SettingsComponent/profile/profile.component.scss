@@ -1,7 +1,5 @@
 .profile-page {
   padding: 4rem 1rem;
-  background: var(--bg-main);
-  color:var( --font-Color);
 
   .container {
     max-width: 700px;
@@ -25,14 +23,12 @@
     margin-top: 2.5rem;
 
     h1,h2{
-    color: var(--light-bg);
     font-size: 2rem;
     margin: 0.5rem 0;
     }
 
       p {
         font-size: 1rem;
-        color: var(--font-Color);
         line-height: 1.5;
       }
   }

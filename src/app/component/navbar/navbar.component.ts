@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../../services/auth.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeServicesService } from '../../theme-services.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,8 +13,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class NavbarComponent implements  OnInit {
 
-  constructor(private _AuthService:AuthService) {}  
+  constructor(private _AuthService:AuthService ,private _ThemeService :ThemeServicesService) {}  
 
+
+  currentTheme: string = 'light';
   isLogin: boolean =false;
 
 
@@ -35,7 +38,20 @@ export class NavbarComponent implements  OnInit {
           console.log('User data subscription completed');
         },
       })
+
+
+      this._ThemeService.theme$.subscribe(theme => {
+      this.currentTheme = theme;
+    })
         
-    }   
+    } 
+    
+
+    
+  toggleTheme() {
+    this._ThemeService.toggleTheme();
+  }
+
+    
     
 }

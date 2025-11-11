@@ -5,6 +5,7 @@ import { PasswordComponent } from './SettingsComponent/password/password.compone
 import { SettingsRoutingModule } from './settings-routing.module';
 import { PrivaceComponent } from './SettingsComponent/privace/privace.component';
 import { ProfileComponent } from './SettingsComponent/profile/profile.component';
+import { ThemeServicesService } from '../theme-services.service';
 
 
 @NgModule({

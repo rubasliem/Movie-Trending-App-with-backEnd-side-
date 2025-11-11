@@ -9,7 +9,7 @@
       <!-- اسم المستخدم -->
 
       <p class="email text-info">{{user?.email }}</p>
-      <p class="text-info">{{ user?.age }} years old</p>
+      <p >{{ user?.age }} years old</p>
 
       <br>
       <h2 class="mb-3">Welcome back, {{ user?.first_name || 'Guest' }}! 🎬 </h2>
@@ -21,7 +21,7 @@
 
     <!-- زر العودة -->
     <div class="d-flex justify-content-center mt-4">
-      <button class="btn btn-info text-white fw-bold px-4 py-2 all_hover" (click)="home()">
+      <button class="btn text-info fw-bold px-4 py-2" (click)="home()">
         Home <i class="bi bi-house-heart-fill"></i>
       </button>
     </div>

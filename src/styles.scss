@@ -1,115 +1,187 @@
-/* You can add global styles to this file, and also import other style files */
+/* ========== Global ========== */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --border-Height: 1px;
-    
-}
+  /* Scale & layout */
+  --border-height: 1px;
 
-html, body {
-  overflow-x: hidden; /* يخفي التمرير الأفقي فقط */
-  overflow-y: auto;   /* يسمح بالتمرير العمودي */
-}
- 
-.all_hover{
-    transition: all 0.3s;
-&:hover{
-transform: translateY(-8px);
-      box-shadow: 0 8px 25px var( --all-hover);
-      border-color:var( --border-color-hover)
-}
-}
-
-.borderHome{
- border: 1px solid #24baef;
-}
-
-.brdr{
-    height: var(--border-Height);
-    background-color: var(--border-Color);
-}
-
-.vote{
-    background-color: var(--light-bg);
-    color: var(--font-Color);  
-
-}
-
-.bg-mine-light {
-    background-color: var(--light-bg);
-}
-
-body {
-    background-color: var(--bg-main);
-    font-family: 'Montserrat', sans-serif;
-    color: var(--font-Color);
-}
-
-a, a:hover {
-    color: var(--font-Color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.input-mine {
-    background-color: transparent;
-    color: var(--font-Color);
-    border: solid 1px var(--border-Color);
-}
-
-/* 🌙 Dark Theme */
-.dark-theme {
-  --bg-main: #000;
-  --bg-gradient-start: #0a0f1c;
-  --bg-gradient-mid: #132235;
-  --bg-gradient-end: #08121e;
-  --light-bg: #24baef;
-  --font-Color: #fff;
-  --second-FontColor: #949cb0c2;
-  --border-Color: #a8a8a83d;
-  --all-hover: #6e6e6e;
-  --left-Color:'$info';
-  --card-about-hover:'$info';
-  --card-text : rgba(255,255,255,0.85);
-  --border-color-hover : rgba(36, 184, 239, 0.4);
-  --navbar-a-hover : #319edd ;
-  --shadow-btn-home : #6e6e6e;
-}
-
-/* ☀️ Light Theme */
-.light-theme {
+  /* 🎨 LIGHT (Default) */
   --bg-main: #f8f9fa;
-  --light-bg:   #24baef;
-  --font-Color:  #30373c;
-  --second-FontColor: #a8a7a7;
-  --border-Color: #5479aa;
-  --card-about:  #cadcea;
-  --card-about-hover: #84b8e0;
-  --card-text : rgba(20, 40, 47, 0.4);
-  --border-color-hover : rgba(36, 184, 239, 0.35);
-  --navbar-a-hover : #4f5d69;
-  --all-hover:  rgba(20, 40, 47, 0.4);
-  --shadow-btn-home :rgba(20, 40, 47, 0.4);
-  --font-Color-list: #30373c;
+  --bg-gradient-start: #f8f9fa;
+  --bg-gradient-mid: #e9eef3;
+  --bg-gradient-end: #dfe7ef;
+
+  --light-bg: #24baef;                 /* Accent surfaces */
+  --font-color: #316991;               /* Primary text */
+  --second-font-color: #6c7a86;        /* Secondary text */
+  --border-color: #c6d1dc;             /* Borders / dividers */
+  --border-color-hover: rgba(36,184,239,0.35);
+  --all-hover: rgba(20,40,47,0.20) ;
+  --card-about: rgba(36,184,239,0.35);
+  --card-about-hover: #e2f3fb;
+  --card-text: rgba(20,40,47,0.85);
+  --navbar-a-hover: #3f4d59;
+
+  /* Shared tokens */
+  --focus-ring: 0 0 0 3px rgba(36,186,239,0.35);
+  --elev-1: 0 4px 12px rgba(0,0,0,0.08);
+  --elev-2: 0 12px 35px rgba(36,184,239,0.35);
 }
 
-/* ⚡ Normal Theme (الافتراضي) */
-.normal-theme {
+/* 🌙 Dark Theme (activated by .dark-theme class on <html>) */
+.dark-theme {
   --bg-main: #0a0f1c;
   --bg-gradient-start: #0a0f1c;
   --bg-gradient-mid: #132235;
-  --bg-gradient-end: #586e88;
-  --light-bg: #5ba3b8;
-  --font-Color: #fff;
-  --second-FontColor: #949cb0c2;
-  --border-Color: #9574743d;
-  --p-about:#a8a8a83d;
-  --card-about:  #1a3449;
-  --card-about-hover: #5ba3b8;
-  --card-text : rgba(255,255,255,0.85);
-  --border-color-hover : rgba(124, 153, 163, 0.4);
-  --left-Color:'$info';
-  --navbar-a-hover : #7ec3eb ;
-  --all-hover:rgba(36, 184, 239, 0.4);
-  --shadow-btn-home :rgba(36, 184, 239, 0.35);
+  --bg-gradient-end: #08121e;
+
+  --light-bg: #24baef;
+  --font-color:  #ffffff;
+  --second-font-color: #a9b4c6;
+  --border-color: rgba(168,168,168,0.24);
+  --border-color-hover: rgba(36,184,239,0.40);
+  --all-hover: rgba(255,255,255,0.08);
+  --card-about: #112131;
+  --card-about-hover: #1a3449;
+  --card-text: rgba(255, 255, 255, 0.88);
+  --navbar-a-hover: #319edd;
 }
+
+/* ========== Base Resets ========== */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body {
+  background: var(--bg-main);
+  font-family: 'Montserrat', sans-serif;
+  color: var(--font-color);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Links */
+a, a:hover {
+  color: var(--font-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+a:hover {
+  opacity: 0.85;
+}
+
+/* Inputs */
+.input-mine {
+  background-color: transparent;
+  color: var(--font-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  outline: none;
+}
+.input-mine:focus {
+  border-color: var(--border-color-hover);
+  box-shadow: var(--focus-ring);
+}
+
+.borderHome {
+  border: 1px solid #24baef;
+  border-radius: 12px;
+}
+
+.brdr {
+  height: var(--border-height);
+  background-color: var(--border-color);
+  width: 100%;
+}
+
+.vote {
+  background-color: var(--light-bg);
+  color: var(--font-color);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+/* Surfaces / Cards */
+.bg-mine-light {
+  background-color: var(--light-bg);
+}
+
+.card {
+  background: var(--card-about);
+  color: var(--card-text);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--elev-1);
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: var(--elev-2);
+  border-color: var(--border-color-hover);
+  transform: translateY(-5px);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border-color);
+  background: linear-gradient(180deg, var(--bg-gradient-start), var(--bg-gradient-mid) 50%, var(--bg-gradient-end));
+  color: var(--font-color);
+  padding: 0.625rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: var(--shadow-btn-home);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-color-hover);
+  box-shadow: var(--elev-2);
+}
+.btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Nav tweaks */
+.navbar a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.navbar a:hover {
+  color: var(--navbar-a-hover);
+}
+
+/* Scrollbar (WebKit) – subtle, theme-aware */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-color-hover);
+}
+
+.btn.selected {
+  border: 2px solid #0dcaf0 !important;
+  color: #0dcaf0 !important;
+  background-color: transparent !important;
+  box-shadow: 0 0 8px rgba(13, 202, 240, 0.4);
+}
+
+.icon:hover{
+  box-shadow: var(--elev-2);
+  border-color: var(--border-color-hover);
+  transform: translateY(-5px);
+}
+

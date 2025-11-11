@@ -11,22 +11,22 @@
         
         @if(isLogin) {
         <li class="nav-item">
-          <a class="nav-link " routerLink="home" routerLinkActive="text-info">Home</a>
+          <a class="nav-link" routerLink="home" routerLinkActive="text-info">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="about" routerLinkActive="text-info">About</a>
+          <a class="nav-link" routerLink="about" routerLinkActive="text-info">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="movies" routerLinkActive="text-info">Movies</a>
+          <a class="nav-link" routerLink="movies" routerLinkActive="text-info">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="tv" routerLinkActive="text-info">TV</a>
+          <a class="nav-link" routerLink="tv" routerLinkActive="text-info">TV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " routerLink="people" routerLinkActive="text-info">People</a>
+          <a class="nav-link" routerLink="people" routerLinkActive="text-info">People</a>
         </li>
          <li class="nav-item">
-          <a class="nav-link " routerLink="categories" routerLinkActive="text-info">Categories <i class="bi bi-film"></i> </a>
+          <a class="nav-link" routerLink="categories" routerLinkActive="text-info">Categories <i class="bi bi-film"></i> </a>
         </li>
       }
       </ul>
@@ -34,11 +34,11 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
         <ul class="nav-item d-flex align-items-center me-3">
-           <a href="https://www.facebook.com/"><i class="fab mx-1 fa-facebook all_hover"></i></a>
-           <a href="https://www.twitter.com/"><i class="fab mx-1 fa-twitter all_hover"></i></a>
-           <a href="https://www.spotify.com/"><i class="fab mx-1 fa-spotify all_hover"></i></a>
-           <a href="https://www.google.com/"><i class="fab mx-1 fa-google all_hover"></i></a>
-           <a href="https://www.youtube.com/"><i class="fab mx-1 fa-youtube all_hover"></i></a>
+           <a href="https://www.facebook.com/"><i class="fab mx-1 fa-facebook icon"></i></a>
+           <a href="https://www.twitter.com/"><i class="fab mx-1 fa-twitter icon"></i></a>
+           <a href="https://www.spotify.com/"><i class="fab mx-1 fa-spotify icon"></i></a>
+           <a href="https://www.google.com/"><i class="fab mx-1 fa-google icon"></i></a>
+           <a href="https://www.youtube.com/"><i class="fab mx-1 fa-youtube icon"></i></a>
           </ul>
 
 
@@ -65,6 +65,13 @@
         </li>
 
    
+                <li class="nav-item d-flex align-items-center mx-3">
+          <button (click)="toggleTheme()" class="btn btn-outline-secondary p-1">
+            @if (currentTheme === 'light') {
+            <i class="fas fa-moon"></i> } @else { <i class="bi bi-brightness-high-fill"></i>}
+          </button>
+        </li>
+
 
         <li class="nav-item">
             <a (click)="logOutNow()" class="nav-link " routerLink="register" routerLinkActive="text-info">Logout</a>

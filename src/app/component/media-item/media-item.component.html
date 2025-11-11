@@ -1,16 +1,16 @@
-<div class="card all_hover position-relative text-center h-100" (click)="goToDetails()" style="cursor: pointer;">
+<div class="card position-relative text-center h-100" (click)="goToDetails()" style="cursor: pointer;">
 
   <img
     *ngIf="item.profile_path || item.poster_path"
     [src]="'https://image.tmdb.org/t/p/w500' + (item.profile_path || item.poster_path)"
-    class="card-img-top rounded-top"
+    class="card-img-top rounded-top-4"
     alt="{{ item.name || item.title }}"
     style="height: 250px; object-fit: cover;"
   />
 
   <img
     *ngIf="!item.profile_path && !item.poster_path"
-    class="w-100"
+    class="card-img-top rounded-top-4"
     src="/assets/images/R.jpeg"
     alt="{{ item.name || item.title }}"
     style="height: 250px; object-fit: cover;"
